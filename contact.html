@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boutique Salons & Concierge | VISTARA</title>
+  <meta name="description" content="Visit Vistara's flagship handloom salons in Mumbai, Delhi, and Bangalore, or schedule a 1-on-1 private video shopping consultation." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🪡</text></svg>" />
+  <style>
+    .contact-hero {
+      background: linear-gradient(rgba(35, 8, 13, 0.82), rgba(20, 4, 7, 0.9)), url('https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?auto=format&fit=crop&w=1920&q=80');
+      background-size: cover;
+      background-position: center;
+      padding: 80px 0;
+      text-align: center;
+      color: var(--color-white);
+      border-bottom: 1px solid var(--color-gold);
+    }
+    .boutiques-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin: 64px 0;
+    }
+    .boutique-card {
+      background: var(--color-white);
+      border: 1px solid var(--color-sand);
+      border-radius: 4px;
+      padding: 32px 28px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      transition: all var(--transition-smooth);
+    }
+    .boutique-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--color-gold);
+      box-shadow: var(--shadow-md);
+    }
+    .boutique-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      color: var(--color-primary);
+      margin-bottom: 10px;
+    }
+    .boutique-address {
+      font-size: 0.92rem;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+    .boutique-timing {
+      font-size: 0.82rem;
+      color: var(--color-primary-dark);
+      background: var(--color-cream);
+      padding: 8px 12px;
+      border-radius: 2px;
+      margin-bottom: 20px;
+    }
+    .boutique-card .btn-secondary {
+      margin-top: auto;
+      border-color: var(--color-primary);
+      color: var(--color-primary);
+      padding: 10px 16px;
+      font-size: 0.78rem;
+    }
+    .contact-form-section {
+      background: var(--color-cream);
+      padding: 80px 0;
+      border-top: 1px solid var(--color-sand);
+    }
+    .form-box-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      background: var(--color-white);
+      padding: 48px;
+      border-radius: 4px;
+      border: 1px solid var(--color-sand);
+      box-shadow: var(--shadow-md);
+    }
+    .faq-section {
+      padding: 96px 0;
+    }
+    .faq-accordion {
+      max-width: 820px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .faq-item {
+      background: var(--color-white);
+      border: 1px solid var(--color-sand);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .faq-question {
+      padding: 20px 24px;
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      color: var(--color-primary);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background var(--transition-fast);
+    }
+    .faq-question:hover {
+      background: var(--color-cream);
+    }
+    .faq-answer {
+      padding: 0 24px 20px 24px;
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+      display: none;
+    }
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+    .faq-item.active .faq-toggle {
+      transform: rotate(45deg);
+    }
+    .faq-toggle {
+      font-size: 1.3rem;
+      transition: transform var(--transition-fast);
+    }
+    @media (max-width: 992px) {
+      .boutiques-grid {
+        grid-template-columns: 1fr;
+      }
+      .form-box-grid {
+        grid-template-columns: 1fr;
+        padding: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ================= ANNOUNCEMENT BAR ================= -->
+  <div class="announcement-bar">
+    <div class="container" style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+      <div class="announcement-ticker">
+        <span class="badge">Concierge</span>
+        <span>Schedule an In-Person Salon Fitting or Private Video Shopping Call with Senior Stylists</span>
+      </div>
+      <div class="announcement-right">
+        <div class="currency-picker">
+          <label for="currency-select-contact">Currency:</label>
+          <select id="currency-select-contact" class="currency-select">
+            <option value="INR">₹ INR</option>
+            <option value="USD">$ USD</option>
+            <option value="EUR">€ EUR</option>
+            <option value="GBP">£ GBP</option>
+            <option value="AED">AED</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= STICKY HEADER ================= -->
+  <header class="site-header">
+    <div class="container">
+      <div class="nav-wrapper">
+        <a href="index.html" class="brand-logo">
+          <span class="brand-monogram">VISTARA</span>
+          <span class="brand-tagline">Heirloom Handlooms &bull; Est. 1988</span>
+        </a>
+
+        <nav class="main-nav">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="collections.html" class="nav-link">Collections</a>
+          <a href="about.html" class="nav-link">Our Heritage</a>
+          <a href="contact.html" class="nav-link active">Boutiques</a>
+        </nav>
+
+        <div class="nav-actions">
+          <button class="icon-btn" id="search-trigger" title="Search Sarees">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </button>
+          <button class="icon-btn" id="wishlist-trigger" title="Wishlist">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+            <span class="badge-count wishlist-count-badge" style="display: none;">0</span>
+          </button>
+          <button class="icon-btn" id="cart-trigger" title="Shopping Bag">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+            <span class="badge-count cart-count-badge" style="display: none;">0</span>
+          </button>
+          <button class="btn-bridal-book trigger-booking-modal">
+            <span>VIP Styling</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= BANNER ================= -->
+  <section class="contact-hero">
+    <div class="container">
+      <span class="section-eyebrow" style="color: var(--color-gold-light);">Personal Stylist Service</span>
+      <h1 class="hero-title" style="font-size: 3rem; margin-bottom: 14px;">Flagship Salons & Concierge</h1>
+      <p style="font-family: var(--font-serif); font-size: 1.3rem; color: var(--color-cream); max-width: 680px; margin: 0 auto;">
+        Experience the tactile luxury of our handlooms in an intimate setting or connect digitally from anywhere across the globe.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= BOUTIQUE LOCATIONS ================= -->
+  <div class="container">
+    <div class="boutiques-grid">
+      <!-- Mumbai -->
+      <div class="boutique-card">
+        <span class="section-eyebrow" style="justify-content: flex-start; margin-bottom: 6px;">Flagship Heritage Salon</span>
+        <h3>Mumbai &bull; Kala Ghoda</h3>
+        <p class="boutique-address">
+          42, Ropewalk Lane, Heritage District, Kala Ghoda, Fort, Mumbai 400001<br />
+          Phone: +91 (22) 2284 9100<br />
+          Email: mumbai@vistarasarees.com
+        </p>
+        <div class="boutique-timing">
+          Mon &ndash; Sun: 11:00 AM &ndash; 8:00 PM (Valet Available)
+        </div>
+        <button class="btn-secondary trigger-booking-modal">
+          Book Mumbai Appointment
+        </button>
+      </div>
+
+      <!-- Delhi -->
+      <div class="boutique-card">
+        <span class="section-eyebrow" style="justify-content: flex-start; margin-bottom: 6px;">Bridal Courtyard</span>
+        <h3>Delhi &bull; Mehrauli</h3>
+        <p class="boutique-address">
+          One Style Mile, Near Qutub Minar, Mehrauli Heritage Complex, New Delhi 110030<br />
+          Phone: +91 (11) 4102 7800<br />
+          Email: delhi@vistarasarees.com
+        </p>
+        <div class="boutique-timing">
+          Mon &ndash; Sun: 11:00 AM &ndash; 8:30 PM (Private Lounges)
+        </div>
+        <button class="btn-secondary trigger-booking-modal">
+          Book Delhi Appointment
+        </button>
+      </div>
+
+      <!-- Bangalore -->
+      <div class="boutique-card">
+        <span class="section-eyebrow" style="justify-content: flex-start; margin-bottom: 6px;">South Silks Vault</span>
+        <h3>Bangalore &bull; Indiranagar</h3>
+        <p class="boutique-address">
+          784, 100 Feet Road, HAL 2nd Stage, Indiranagar, Bengaluru, Karnataka 560038<br />
+          Phone: +91 (80) 2521 4455<br />
+          Email: bangalore@vistarasarees.com
+        </p>
+        <div class="boutique-timing">
+          Mon &ndash; Sun: 10:30 AM &ndash; 8:00 PM
+        </div>
+        <button class="btn-secondary trigger-booking-modal">
+          Book Bangalore Appointment
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= INQUIRY & VIDEO CONSULTATION FORM ================= -->
+  <section class="contact-form-section">
+    <div class="container">
+      <div class="form-box-grid">
+        <div>
+          <span class="section-eyebrow" style="justify-content: flex-start;">Video Shopping Concierge</span>
+          <h2 style="font-family: var(--font-heading); font-size: 2rem; color: var(--color-primary); margin-bottom: 16px;">
+            Shop From New York, London, or Dubai via 4K Video
+          </h2>
+          <p style="font-family: var(--font-serif); font-size: 1.12rem; color: var(--color-text-muted); line-height: 1.7; margin-bottom: 24px;">
+            Our stylists will drape each saree live on dress forms, reveal the reverse weave to show authentic kadwa craftsmanship, and assist with custom blouse sketches in real time.
+          </p>
+
+          <div style="background: var(--color-ivory); padding: 20px; border-radius: 4px; border: 1px solid var(--color-sand); margin-bottom: 24px;">
+            <strong style="color: var(--color-primary); font-family: var(--font-heading); display: block; margin-bottom: 6px;">WhatsApp Stylist Desk</strong>
+            <p style="font-size: 0.88rem; color: var(--color-text-muted); margin-bottom: 12px;">Need instant answers regarding fabric drape, wedding timelines, or shipping quotes?</p>
+            <a href="https://wa.me/919876543210" target="_blank" class="btn-primary" style="padding: 10px 20px; font-size: 0.78rem; display: inline-flex;">
+              Chat on WhatsApp: +91 98765 43210
+            </a>
+          </div>
+        </div>
+
+        <form onsubmit="handleContactMessage(event)">
+          <div style="margin-bottom: 16px;">
+            <label style="display: block; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; margin-bottom: 6px;">Your Name</label>
+            <input required type="text" placeholder="e.g. Priyadarshini Mehta" style="width: 100%; padding: 12px 14px; border: 1px solid var(--color-sand); border-radius: 2px; font-size: 0.9rem; background: var(--color-ivory);" />
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 16px;">
+            <div>
+              <label style="display: block; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; margin-bottom: 6px;">Email Address</label>
+              <input required type="email" placeholder="priya@example.com" style="width: 100%; padding: 12px 14px; border: 1px solid var(--color-sand); border-radius: 2px; font-size: 0.9rem; background: var(--color-ivory);" />
+            </div>
+            <div>
+              <label style="display: block; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; margin-bottom: 6px;">Phone / WhatsApp</label>
+              <input required type="tel" placeholder="+91 98765 43210" style="width: 100%; padding: 12px 14px; border: 1px solid var(--color-sand); border-radius: 2px; font-size: 0.9rem; background: var(--color-ivory);" />
+            </div>
+          </div>
+
+          <div style="margin-bottom: 16px;">
+            <label style="display: block; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; margin-bottom: 6px;">Saree Interest</label>
+            <select style="width: 100%; padding: 12px 14px; border: 1px solid var(--color-sand); border-radius: 2px; font-size: 0.9rem; background: var(--color-ivory);">
+              <option>Bridal Muhurtham Kanjivaram</option>
+              <option>Royal Banarasi Kadwa Brocade</option>
+              <option>Lightweight Hand-Painted Organza</option>
+              <option>Full Bridal Trousseau (Multiple Sarees)</option>
+              <option>Custom Weave Inquiry</option>
+            </select>
+          </div>
+
+          <div style="margin-bottom: 24px;">
+            <label style="display: block; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; margin-bottom: 6px;">Notes / Special Requirements</label>
+            <textarea rows="4" placeholder="Tell us about your wedding date, color preferences, or specific motifs..." style="width: 100%; padding: 12px 14px; border: 1px solid var(--color-sand); border-radius: 2px; font-size: 0.9rem; background: var(--color-ivory);"></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary" style="width: 100%;">
+            Send Message to Stylist Desk
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FREQUENTLY ASKED QUESTIONS ================= -->
+  <section class="faq-section" id="faqs">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Client Assistance</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle">
+          Everything you need to know about our silk certification, customization, and worldwide delivery.
+        </p>
+      </div>
+
+      <div class="faq-accordion">
+        <div class="faq-item active">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>How do I know my Vistara saree is genuine handloom silk?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            Every Vistara drape is tagged with an authentic Silk Mark India label, containing a unique QR verification code backed by the Central Silk Board. Moreover, authentic handloom sarees possess subtle variations in weave tension and selvedge edges that testify to the touch of human hands.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>What type of zari is used in Vistara sarees?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            Our heirloom bridal collection utilizes pure silver electroplated with 24K gold zari. Our festive collection uses high-grade tested zari that retains its brilliant sheen without tarnishing or turning black over time when properly stored in muslin.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>Does the saree come with a blouse piece?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            Yes. Every saree includes an attached 0.8-meter matching or contrast unstitched blouse piece. We also offer bespoke custom stitching by our bridal master tailors with personalized necklines, sleeve embroidery, and measurements.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>How does international shipping work?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            We deliver worldwide across 45+ countries (USA, UK, Canada, UAE, Singapore, Australia, etc.) via insured DHL Express. Orders above ₹50,000 enjoy complimentary express shipping. Typical delivery takes 4 to 6 business days.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>&copy; 2026 VISTARA SILK & SAREES PRIVATE LIMITED. ALL RIGHTS RESERVED.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Drawer Backdrop & Drawers -->
+  <div class="drawer-backdrop" id="drawer-backdrop"></div>
+  <aside class="drawer" id="cart-drawer">
+    <div class="drawer-header"><h3>Your Shopping Bag</h3><button class="drawer-close-btn" id="cart-close">&times;</button></div>
+    <div class="cart-free-shipping"><div id="shipping-progress-text">Add sarees for Complimentary Global Express Shipping</div><div class="progress-bar"><div class="progress-fill" id="shipping-progress-fill"></div></div></div>
+    <div class="drawer-body" id="cart-items-container"></div>
+    <div class="drawer-footer">
+      <div class="coupon-section"><input type="text" class="coupon-input" id="coupon-input" placeholder="Promotional Code" /><button class="coupon-btn" onclick="applyCoupon()">Apply</button></div>
+      <div class="order-summary-row"><span>Bag Subtotal:</span><span id="cart-subtotal">₹0</span></div>
+      <div class="order-summary-row" id="cart-discount-row" style="display: none; color: var(--color-emerald);"><span>Royal Discount (10%):</span><span id="cart-discount-amount">-₹0</span></div>
+      <div class="order-summary-row total"><span>Estimated Total:</span><span id="cart-total">₹0</span></div>
+      <button class="btn-primary btn-checkout" onclick="proceedToCheckout()">Proceed to Secure Checkout</button>
+    </div>
+  </aside>
+
+  <aside class="drawer" id="wishlist-drawer">
+    <div class="drawer-header"><h3>Your Bridal Wishlist</h3><button class="drawer-close-btn" id="wishlist-close">&times;</button></div>
+    <div class="drawer-body" id="wishlist-items-container"></div>
+  </aside>
+
+  <div class="modal-backdrop" id="quickview-modal">
+    <div class="modal-box"><button class="modal-close-btn" id="modal-close">&times;</button><div class="modal-content-grid" id="modal-content"></div></div>
+  </div>
+
+  <div class="search-modal" id="search-modal">
+    <div class="search-container">
+      <div class="search-input-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" class="search-input" id="search-input" placeholder="Search sarees by weave, fabric..." />
+        <button id="search-close" style="font-size: 1.5rem; color: var(--color-text-muted); cursor: pointer;">&times;</button>
+      </div>
+      <div class="search-results-dropdown" id="search-results"></div>
+    </div>
+  </div>
+
+  <script src="products.js"></script>
+  <script src="app.js"></script>
+  <script>
+    function toggleFaq(el) {
+      const item = el.closest('.faq-item');
+      item.classList.toggle('active');
+    }
+
+    function handleContactMessage(e) {
+      e.preventDefault();
+      e.target.reset();
+      showToast('Thank you! Our personal stylist will contact you within 2 hours.');
+    }
+  </script>
+</body>
+</html>

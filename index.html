@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VISTARA | Heirloom Handloom Sarees & Bridal Silks</title>
+  <meta name="description" content="Discover Vistara's exquisite collection of pure silk Kanjivaram, authentic Banarasi, tissue Chanderi, and organza sarees. Handcrafted by master artisans with Silk Mark guarantee." />
+  <link rel="stylesheet" href="style.css" />
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🪡</text></svg>" />
+</head>
+<body>
+
+  <!-- ================= ANNOUNCEMENT BAR ================= -->
+  <div class="announcement-bar">
+    <div class="container" style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+      <div class="announcement-ticker">
+        <span class="badge">Royal Offer</span>
+        <span>Complimentary Worldwide Express Shipping on Orders Above ₹50,000 | Use Code: <strong>VISTARA10</strong> for 10% Off</span>
+      </div>
+      <div class="announcement-right">
+        <div class="currency-picker">
+          <label for="currency-select-top">Currency:</label>
+          <select id="currency-select-top" class="currency-select">
+            <option value="INR">₹ INR</option>
+            <option value="USD">$ USD</option>
+            <option value="EUR">€ EUR</option>
+            <option value="GBP">£ GBP</option>
+            <option value="AED">AED</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= STICKY HEADER ================= -->
+  <header class="site-header">
+    <div class="container">
+      <div class="nav-wrapper">
+        <!-- Brand Logo -->
+        <a href="index.html" class="brand-logo">
+          <span class="brand-monogram">VISTARA</span>
+          <span class="brand-tagline">Heirloom Handlooms &bull; Est. 1988</span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="main-nav">
+          <a href="index.html" class="nav-link active">Home</a>
+          <a href="collections.html" class="nav-link">
+            Collections
+            <span class="tag-highlight">Festive</span>
+          </a>
+          <a href="#the-craft" class="nav-link">The Craft</a>
+          <a href="#lookbook" class="nav-link">Lookbook</a>
+          <a href="about.html" class="nav-link">Our Heritage</a>
+          <a href="contact.html" class="nav-link">Boutiques</a>
+        </nav>
+
+        <!-- Right Action Icons -->
+        <div class="nav-actions">
+          <button class="icon-btn" id="search-trigger" title="Search Sarees">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </button>
+
+          <button class="icon-btn" id="wishlist-trigger" title="Bridal Wishlist">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            </svg>
+            <span class="badge-count wishlist-count-badge" style="display: none;">0</span>
+          </button>
+
+          <button class="icon-btn" id="cart-trigger" title="Shopping Bag">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+            <span class="badge-count cart-count-badge" style="display: none;">0</span>
+          </button>
+
+          <button class="btn-bridal-book trigger-booking-modal">
+            <span>VIP Styling</span>
+          </button>
+
+          <!-- Mobile Hamburger -->
+          <button class="icon-btn mobile-menu-btn" title="Open Menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section class="hero-section">
+    <div class="hero-overlay-pattern"></div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+          </svg>
+          The Royal Heirloom Trousseau
+        </div>
+
+        <h1 class="hero-title">
+          Weaving Heritage into <em>Timeless Elegance</em>
+        </h1>
+
+        <p class="hero-subtitle">
+          From the sacred pit looms of Kanchipuram to the royal kadwa weavers of Varanasi. Each Vistara saree represents up to 300 hours of pure silk mastery.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#catalog" class="btn-primary">
+            Explore Festive Edit
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+          <button class="btn-secondary trigger-booking-modal">
+            Book Bridal Consultation
+          </button>
+        </div>
+
+        <div class="hero-features">
+          <div class="feature-pill">
+            <div class="feature-pill-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <div class="feature-pill-text">
+              <strong>Silk Mark Certified</strong>
+              <span>100% Pure Natural Silk</span>
+            </div>
+          </div>
+
+          <div class="feature-pill">
+            <div class="feature-pill-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+            </div>
+            <div class="feature-pill-text">
+              <strong>Pure Gold Zari</strong>
+              <span>Dipped in 24K Gold</span>
+            </div>
+          </div>
+
+          <div class="feature-pill">
+            <div class="feature-pill-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+                <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                <line x1="15" y1="9" x2="15.01" y2="9"></line>
+              </svg>
+            </div>
+            <div class="feature-pill-text">
+              <strong>Artisan Direct</strong>
+              <span>Ethical Fair Compensation</span>
+            </div>
+          </div>
+
+          <div class="feature-pill">
+            <div class="feature-pill-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="1" y="3" width="15" height="13"></rect>
+                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                <circle cx="18.5" cy="18.5" r="2.5"></circle>
+              </svg>
+            </div>
+            <div class="feature-pill-text">
+              <strong>Global Delivery</strong>
+              <span>Insured Express Shipping</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= BRAND CREDENTIALS BAR ================= -->
+  <section class="brand-stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number">1,200+</div>
+          <div class="stat-label">Master Loom Artisans</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Pure Silk Mark Certified</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">4.9 / 5</div>
+          <div class="stat-label">Connoisseur Bride Rating</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">45+</div>
+          <div class="stat-label">Countries Delivered</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CURATED WEAVE PILLARS ================= -->
+  <section class="categories-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">The Heritage Clusters</span>
+        <h2 class="section-title">Iconic Weaves of India</h2>
+        <p class="section-subtitle">
+          Every region tells a story through thread, tension, and golden zari. Discover our signature six weaving lineages.
+        </p>
+      </div>
+
+      <div class="category-grid">
+        <!-- Kanjivaram Card -->
+        <div class="category-card" onclick="window.location.href='collections.html?category=kanjivaram'">
+          <img class="category-card-img" src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=900&q=80" alt="Kanjivaram Silk Sarees" />
+          <div class="category-card-overlay">
+            <span class="category-origin">Tamil Nadu &bull; Temple Silks</span>
+            <h3 class="category-name">Kanjivaram Pure Silks</h3>
+            <p class="category-desc">Woven with 4-ply mulberry silk and interlocking korvai borders with real gold zari.</p>
+            <span class="category-link">
+              Explore Collection &rarr;
+            </span>
+          </div>
+        </div>
+
+        <!-- Banarasi Card -->
+        <div class="category-card" onclick="window.location.href='collections.html?category=banarasi'">
+          <img class="category-card-img" src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=900&q=80" alt="Banarasi Brocades" />
+          <div class="category-card-overlay">
+            <span class="category-origin">Varanasi &bull; Awadhi Brocades</span>
+            <h3 class="category-name">Royal Banarasi</h3>
+            <p class="category-desc">Magnificent kadwa florals, shikargah hunting tapestries, and shimmery sona-rupa brocades.</p>
+            <span class="category-link">
+              Explore Collection &rarr;
+            </span>
+          </div>
+        </div>
+
+        <!-- Organza Card -->
+        <div class="category-card" onclick="window.location.href='collections.html?category=organza'">
+          <img class="category-card-img" src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=900&q=80" alt="Hand-painted Organza" />
+          <div class="category-card-overlay">
+            <span class="category-origin">Jaipur & Varanasi &bull; Sheer Opulence</span>
+            <h3 class="category-name">Hand-Painted Organza</h3>
+            <p class="category-desc">Featherlight silk organza with delicate botanical brushstrokes and scallop gota patti.</p>
+            <span class="category-link">
+              Explore Collection &rarr;
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= INTERACTIVE PRODUCT CATALOG ================= -->
+  <section class="catalog-section" id="catalog">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Curated Masterpieces</span>
+        <h2 class="section-title">The Festive & Bridal Showcase</h2>
+        <p class="section-subtitle">
+          Hand-inspected by master appraisers. Filter by weaving cluster or occasion to find your heirloom drape.
+        </p>
+      </div>
+
+      <!-- Filter and Sort Bar -->
+      <div class="filter-bar">
+        <div class="filter-pills">
+          <button class="filter-btn active" data-filter="all">All Weaves</button>
+          <button class="filter-btn" data-filter="kanjivaram">Kanjivaram</button>
+          <button class="filter-btn" data-filter="banarasi">Banarasi</button>
+          <button class="filter-btn" data-filter="organza">Organza</button>
+          <button class="filter-btn" data-filter="chanderi">Chanderi</button>
+          <button class="filter-btn" data-filter="paithani">Paithani</button>
+          <button class="filter-btn" data-filter="bridal">Bridal Edit</button>
+        </div>
+
+        <div class="sort-box">
+          <label for="sort-select">Sort By:</label>
+          <select id="sort-select">
+            <option value="featured">Heirloom Featured</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="rating">Connoisseur Rating</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Products Grid (Rendered dynamically by app.js) -->
+      <div class="products-grid" id="products-container">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= THE ARTISAN CRAFTSMANSHIP SECTION ================= -->
+  <section class="craftsmanship-section" id="the-craft">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow" style="color: var(--color-gold-light);">The Art of Weaving</span>
+        <h2 class="section-title">The Soul of the Loom</h2>
+        <p class="section-subtitle">
+          No industrial machines. No synthetic polyester. Only the rhythmic cadence of master weavers preserving centuries-old royal lineages.
+        </p>
+      </div>
+
+      <div class="craft-grid">
+        <div class="craft-image-frame">
+          <img class="craft-main-image" src="https://images.unsplash.com/photo-1609357605129-26f69add5d6e?auto=format&fit=crop&w=900&q=80" alt="Vistara Master Weaver on Pit Loom" />
+          <div class="craft-floating-badge">
+            <strong>Certified Authenticity</strong>
+            <span>Every Vistara drape arrives with an individual Silk Mark hologram and certificate of authenticity.</span>
+          </div>
+        </div>
+
+        <div class="craft-steps">
+          <div class="craft-step-item">
+            <div class="craft-step-num">01</div>
+            <div class="craft-step-content">
+              <h4>Mulberry Silk Selection</h4>
+              <p>We source only unbroken, high-twist grade AAA mulberry silk filaments, ensuring an unmatched lustre and decades-long resilience.</p>
+            </div>
+          </div>
+
+          <div class="craft-step-item">
+            <div class="craft-step-num">02</div>
+            <div class="craft-step-content">
+              <h4>Real Silver & Gold Zari Spinning</h4>
+              <p>Our zari uses pure silver wire flattened and electroplated in 24K pure gold, creating that unmistakable antique glow that never tarnishes.</p>
+            </div>
+          </div>
+
+          <div class="craft-step-item">
+            <div class="craft-step-num">03</div>
+            <div class="craft-step-content">
+              <h4>Korvai & Kadwa Handloom Technique</h4>
+              <p>Two weavers sit side by side on traditional wooden pit looms, interlocking contrasting borders without a single break in thread continuity.</p>
+            </div>
+          </div>
+
+          <div class="craft-step-item">
+            <div class="craft-step-num">04</div>
+            <div class="craft-step-content">
+              <h4>Fair Trade Artisan Guilds</h4>
+              <p>By eliminating middle trading agents, Vistara guarantees direct premium payouts and healthcare pensions to over 1,200 weaver families.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= DRAPING MASTERCLASS / LOOKBOOK ================= -->
+  <section class="drape-guide-section" id="lookbook">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Styling Masterclass</span>
+        <h2 class="section-title">The Four Regal Drapes</h2>
+        <p class="section-subtitle">
+          How to style your Vistara saree for ceremonies, cocktail soirees, and traditional weddings.
+        </p>
+      </div>
+
+      <div class="drape-cards-grid">
+        <div class="drape-card">
+          <div class="drape-tag">Bridal Classic</div>
+          <h3 class="drape-title">The Royal Nivi Drape</h3>
+          <p class="drape-desc">The timeless drape featuring neat waist pleats and an open, cascading pallu pinned lightly over the shoulder.</p>
+          <div class="drape-tip">
+            <strong>Styling Tip:</strong> Ideal for heavy Kanjivaram and Banarasi sarees paired with antique temple jewellery.
+          </div>
+        </div>
+
+        <div class="drape-card">
+          <div class="drape-tag">Editorial Glamour</div>
+          <h3 class="drape-title">The Belted Modern Drape</h3>
+          <p class="drape-desc">A structured, runway-inspired drape cinched at the waist with an ornate embroidered kamarbandh or metallic belt.</p>
+          <div class="drape-tip">
+            <strong>Styling Tip:</strong> Perfect for Organza and Chanderi sarees at reception galas and sangeet evenings.
+          </div>
+        </div>
+
+        <div class="drape-card">
+          <div class="drape-tag">Aristocratic Heritage</div>
+          <h3 class="drape-title">The Bengali Athpourey</h3>
+          <p class="drape-desc">Box pleats in front with the rich pallu draped gracefully from back to front over both shoulders with an ornate bunch of keys.</p>
+          <div class="drape-tip">
+            <strong>Styling Tip:</strong> Highlights heavy zari pallus and Tanchoi Banarasi weaves with regal grandeur.
+          </div>
+        </div>
+
+        <div class="drape-card">
+          <div class="drape-tag">Festive Elegance</div>
+          <h3 class="drape-title">The Seedha Pallu (Gujarati)</h3>
+          <p class="drape-desc">The ornate pallu is brought from the back over the right shoulder to show off intricate tapestry motifs across the front chest.</p>
+          <div class="drape-tip">
+            <strong>Styling Tip:</strong> The best choice for Paithani and Shikargah Banarasi masterpieces with pictorial birds.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= REAL BRIDES & TESTIMONIALS ================= -->
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Real Brides of Vistara</span>
+        <h2 class="section-title">Cherished by Generations</h2>
+        <p class="section-subtitle">
+          Words from connoisseurs and brides who made their auspicious vows draped in Vistara.
+        </p>
+      </div>
+
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-quote">
+            "My Maharani Crimson Kanjivaram was the crown of my wedding day. The pure gold zari has an ethereal warmth in the mandap firelight that no machine saree can ever mimic."
+          </p>
+          <div class="testimonial-author">
+            <img class="author-avatar" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&q=80" alt="Radhika Iyer" />
+            <div class="author-info">
+              <h5>Radhika Iyer</h5>
+              <span>Bride &bull; Chennai & London</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-quote">
+            "The video shopping concierge in Mumbai was phenomenal. They showed me the pallu reverse side in 4K resolution so I could verify the authentic kadwa weave. Received it in San Jose in 4 days!"
+          </p>
+          <div class="testimonial-author">
+            <img class="author-avatar" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&q=80" alt="Ananya Deshmukh" />
+            <div class="author-info">
+              <h5>Ananya Deshmukh</h5>
+              <span>Connoisseur &bull; California, USA</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-quote">
+            "The pure organza Gulabi Noor drape feels weightless like moonlight. It received compliments from every single guest at my sister's reception in Udaipur."
+          </p>
+          <div class="testimonial-author">
+            <img class="author-avatar" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=150&q=80" alt="Meera Sen" />
+            <div class="author-info">
+              <h5>Meera Sen</h5>
+              <span>Kolkata</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= VIP CONNOISSEURS CLUB ================= -->
+  <section class="newsletter-section">
+    <div class="container">
+      <div class="newsletter-box">
+        <span class="section-eyebrow">The Connoisseur Circle</span>
+        <h2 class="section-title">Join The Private Loom Society</h2>
+        <p>
+          Subscribe to receive VIP access to limited single-edition handloom drops, private salon invitations, and a ₹1,500 welcome credit toward your first bespoke drape.
+        </p>
+
+        <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+          <input required type="email" class="newsletter-input" placeholder="Enter your email address" />
+          <button type="submit" class="btn-primary">
+            Request Invitation
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= LUXURY FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <!-- Col 1: Brand Info -->
+        <div class="footer-brand">
+          <div class="brand-monogram">VISTARA</div>
+          <p>
+            Vistara is an ode to India's living handloom heritage. We celebrate pure mulberry silks, authentic silver-gold zari, and the generational mastery of our artisan families.
+          </p>
+          <div class="social-links">
+            <a href="#" class="social-icon-btn" title="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="#" class="social-icon-btn" title="Pinterest">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M8 12c0 2.2 1.8 4 4 4s4-1.8 4-4-1.8-4-4-4"></path>
+                <line x1="12" y1="8" x2="12" y2="16"></line>
+              </svg>
+            </a>
+            <a href="#" class="social-icon-btn" title="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: The Collections -->
+        <div class="footer-col">
+          <h5>Collections</h5>
+          <ul class="footer-links">
+            <li><a href="collections.html?category=kanjivaram">Kanjivaram Silk Sarees</a></li>
+            <li><a href="collections.html?category=banarasi">Varanasi Brocades & Kadwa</a></li>
+            <li><a href="collections.html?category=organza">Hand-Painted Organza</a></li>
+            <li><a href="collections.html?category=chanderi">Tissue Chanderi</a></li>
+            <li><a href="collections.html?category=paithani">Yeola Paithani Weaves</a></li>
+            <li><a href="collections.html?category=bridal">Bridal Trousseau Vault</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Connoisseur Services -->
+        <div class="footer-col">
+          <h5>Concierge & Care</h5>
+          <ul class="footer-links">
+            <li><a href="#" class="trigger-booking-modal">Book Video Shopping</a></li>
+            <li><a href="about.html">Silk Mark Verification</a></li>
+            <li><a href="contact.html">Silk Care & Storage Guide</a></li>
+            <li><a href="contact.html#faqs">Worldwide Express Shipping</a></li>
+            <li><a href="contact.html#faqs">Returns & Authenticity</a></li>
+            <li><a href="contact.html">Boutique Appointments</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Boutiques -->
+        <div class="footer-col">
+          <h5>Flagship Salons</h5>
+          <div class="boutique-snippet">
+            <strong>Mumbai Flagship</strong>
+            <p>42, Ropewalk Lane, Kala Ghoda, Fort, Mumbai 400001</p>
+          </div>
+          <div class="boutique-snippet">
+            <strong>Delhi Salon</strong>
+            <p>One Style Mile, Mehrauli Heritage Complex, New Delhi 110030</p>
+          </div>
+          <div class="boutique-snippet">
+            <strong>Bangalore Studio</strong>
+            <p>784, 100ft Road, Indiranagar, Bangalore 560038</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 VISTARA SILK & SAREES PRIVATE LIMITED. ALL RIGHTS RESERVED. HANDCRAFTED IN INDIA.
+        </div>
+        <div class="payment-badges">
+          <span>Silk Mark India</span> &bull;
+          <span>Visa</span> &bull;
+          <span>Mastercard</span> &bull;
+          <span>American Express</span> &bull;
+          <span>UPI / NetBanking</span> &bull;
+          <span>PayPal Worldwide</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= DRAWERS & MODALS ================= -->
+
+  <!-- Drawer Backdrop -->
+  <div class="drawer-backdrop" id="drawer-backdrop"></div>
+
+  <!-- Slide-out Cart Drawer -->
+  <aside class="drawer" id="cart-drawer">
+    <div class="drawer-header">
+      <h3>Your Shopping Bag</h3>
+      <button class="drawer-close-btn" id="cart-close">&times;</button>
+    </div>
+
+    <div class="cart-free-shipping">
+      <div id="shipping-progress-text">Add sarees for Complimentary Global Express Shipping</div>
+      <div class="progress-bar">
+        <div class="progress-fill" id="shipping-progress-fill"></div>
+      </div>
+    </div>
+
+    <div class="drawer-body" id="cart-items-container">
+      <!-- Injected via app.js -->
+    </div>
+
+    <div class="drawer-footer">
+      <div class="coupon-section">
+        <input type="text" class="coupon-input" id="coupon-input" placeholder="Promotional Code" />
+        <button class="coupon-btn" onclick="applyCoupon()">Apply</button>
+      </div>
+
+      <div class="order-summary-row">
+        <span>Bag Subtotal:</span>
+        <span id="cart-subtotal">₹0</span>
+      </div>
+
+      <div class="order-summary-row" id="cart-discount-row" style="display: none; color: var(--color-emerald);">
+        <span>Royal Discount (10%):</span>
+        <span id="cart-discount-amount">-₹0</span>
+      </div>
+
+      <div class="order-summary-row">
+        <span>Silk Mark Certification:</span>
+        <span style="color: var(--color-emerald); font-weight: 600;">Complimentary</span>
+      </div>
+
+      <div class="order-summary-row total">
+        <span>Estimated Total:</span>
+        <span id="cart-total">₹0</span>
+      </div>
+
+      <button class="btn-primary btn-checkout" onclick="proceedToCheckout()">
+        Proceed to Secure Checkout
+      </button>
+    </div>
+  </aside>
+
+  <!-- Slide-out Wishlist Drawer -->
+  <aside class="drawer" id="wishlist-drawer">
+    <div class="drawer-header">
+      <h3>Your Bridal Wishlist</h3>
+      <button class="drawer-close-btn" id="wishlist-close">&times;</button>
+    </div>
+    <div class="drawer-body" id="wishlist-items-container">
+      <!-- Injected via app.js -->
+    </div>
+  </aside>
+
+  <!-- Product Quick View Modal -->
+  <div class="modal-backdrop" id="quickview-modal">
+    <div class="modal-box">
+      <button class="modal-close-btn" id="modal-close">&times;</button>
+      <div class="modal-content-grid" id="modal-content">
+        <!-- Injected via app.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Predictive Search Modal -->
+  <div class="search-modal" id="search-modal">
+    <div class="search-container">
+      <div class="search-input-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" class="search-input" id="search-input" placeholder="Search by weave, fabric (Kanjivaram, Banarasi, Organza)..." />
+        <button id="search-close" style="font-size: 1.5rem; color: var(--color-text-muted); cursor: pointer;">&times;</button>
+      </div>
+      <div class="search-results-dropdown" id="search-results">
+        <!-- Results injected here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Modules -->
+  <script src="products.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

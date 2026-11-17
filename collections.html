@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Weaving Vaults &bull; Curated Collections | VISTARA</title>
+  <meta name="description" content="Explore Vistara's full heirloom collection: Handwoven Kanjivaram pure silks, Banarasi brocades, lightweight organza, and tissue Chanderi sarees." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🪡</text></svg>" />
+  <style>
+    .catalog-page-header {
+      background: linear-gradient(rgba(35, 8, 13, 0.85), rgba(20, 4, 7, 0.9)), url('https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=1920&q=80');
+      background-size: cover;
+      background-position: center;
+      padding: 70px 0;
+      text-align: center;
+      color: var(--color-white);
+      border-bottom: 1px solid var(--color-gold);
+    }
+    .catalog-layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 36px;
+      padding: 48px 0 96px 0;
+    }
+    .catalog-sidebar {
+      background: var(--color-white);
+      border: 1px solid var(--color-sand);
+      border-radius: 4px;
+      padding: 24px;
+      height: fit-content;
+      position: sticky;
+      top: 104px;
+    }
+    .filter-group {
+      margin-bottom: 24px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--color-sand);
+    }
+    .filter-group:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    .filter-group h4 {
+      font-family: var(--font-heading);
+      font-size: 0.88rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-primary);
+      margin-bottom: 14px;
+    }
+    .filter-options {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .filter-checkbox {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.84rem;
+      color: var(--color-text-muted);
+      cursor: pointer;
+    }
+    .filter-checkbox input {
+      accent-color: var(--color-primary);
+    }
+    .catalog-top-controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--color-sand);
+    }
+    @media (max-width: 992px) {
+      .catalog-layout {
+        grid-template-columns: 1fr;
+      }
+      .catalog-sidebar {
+        position: static;
+        margin-bottom: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ================= ANNOUNCEMENT BAR ================= -->
+  <div class="announcement-bar">
+    <div class="container" style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+      <div class="announcement-ticker">
+        <span class="badge">Silk Mark Certified</span>
+        <span>Every Vistara Drape Arrives With A Verified Handloom Silk Mark Tag | Code: <strong>VISTARA10</strong></span>
+      </div>
+      <div class="announcement-right">
+        <div class="currency-picker">
+          <label for="currency-select-collections">Currency:</label>
+          <select id="currency-select-collections" class="currency-select">
+            <option value="INR">₹ INR</option>
+            <option value="USD">$ USD</option>
+            <option value="EUR">€ EUR</option>
+            <option value="GBP">£ GBP</option>
+            <option value="AED">AED</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= STICKY HEADER ================= -->
+  <header class="site-header">
+    <div class="container">
+      <div class="nav-wrapper">
+        <a href="index.html" class="brand-logo">
+          <span class="brand-monogram">VISTARA</span>
+          <span class="brand-tagline">Heirloom Handlooms &bull; Est. 1988</span>
+        </a>
+
+        <nav class="main-nav">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="collections.html" class="nav-link active">Collections</a>
+          <a href="about.html" class="nav-link">Our Heritage</a>
+          <a href="contact.html" class="nav-link">Boutiques</a>
+        </nav>
+
+        <div class="nav-actions">
+          <button class="icon-btn" id="search-trigger" title="Search Sarees">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </button>
+
+          <button class="icon-btn" id="wishlist-trigger" title="Wishlist">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            </svg>
+            <span class="badge-count wishlist-count-badge" style="display: none;">0</span>
+          </button>
+
+          <button class="icon-btn" id="cart-trigger" title="Shopping Bag">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+            <span class="badge-count cart-count-badge" style="display: none;">0</span>
+          </button>
+
+          <button class="btn-bridal-book trigger-booking-modal">
+            <span>VIP Styling</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= BANNER ================= -->
+  <section class="catalog-page-header">
+    <div class="container">
+      <span class="section-eyebrow" style="color: var(--color-gold-light);">The Complete Vault</span>
+      <h1 class="hero-title" style="font-size: 2.8rem; margin-bottom: 12px;">Heirloom Handloom Sarees</h1>
+      <p style="font-family: var(--font-serif); font-size: 1.25rem; color: var(--color-cream); max-width: 640px; margin: 0 auto;">
+        Authentic Kanjivaram, Kadwa Banarasi, Sheer Organza, and Tissue Chanderi masterworks handwoven for life's most precious celebrations.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= CATALOG WITH SIDEBAR FILTERS ================= -->
+  <div class="container">
+    <div class="catalog-layout">
+      <!-- Sidebar Filters -->
+      <aside class="catalog-sidebar">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; border-bottom: 1px solid var(--color-sand); padding-bottom: 12px;">
+          <h3 style="font-family: var(--font-heading); font-size: 1.05rem; color: var(--color-primary);">Filter Weaves</h3>
+          <button style="font-size: 0.76rem; color: var(--color-gold); font-weight: 600; text-decoration: underline;" onclick="resetSidebarFilters()">Reset</button>
+        </div>
+
+        <!-- Weave Category -->
+        <div class="filter-group">
+          <h4>Weaving Lineage</h4>
+          <div class="filter-options">
+            <label class="filter-checkbox"><input type="radio" name="sidebar-category" value="all" checked onchange="filterCategory(this.value)" /> All Lineages</label>
+            <label class="filter-checkbox"><input type="radio" name="sidebar-category" value="kanjivaram" onchange="filterCategory(this.value)" /> Kanjivaram Silks</label>
+            <label class="filter-checkbox"><input type="radio" name="sidebar-category" value="banarasi" onchange="filterCategory(this.value)" /> Banarasi Brocades</label>
+            <label class="filter-checkbox"><input type="radio" name="sidebar-category" value="organza" onchange="filterCategory(this.value)" /> Hand-painted Organza</label>
+            <label class="filter-checkbox"><input type="radio" name="sidebar-category" value="chanderi" onchange="filterCategory(this.value)" /> Tissue Chanderi</label>
+            <label class="filter-checkbox"><input type="radio" name="sidebar-category" value="paithani" onchange="filterCategory(this.value)" /> Yeola Paithani</label>
+            <label class="filter-checkbox"><input type="radio" name="sidebar-category" value="tussar" onchange="filterCategory(this.value)" /> Forest Wild Tussar</label>
+          </div>
+        </div>
+
+        <!-- Occasion -->
+        <div class="filter-group">
+          <h4>Occasion</h4>
+          <div class="filter-options">
+            <label class="filter-checkbox"><input type="radio" name="sidebar-occasion" value="all" checked onchange="filterOccasion(this.value)" /> All Occasions</label>
+            <label class="filter-checkbox"><input type="radio" name="sidebar-occasion" value="bridal" onchange="filterOccasion(this.value)" /> Royal Bridal & Muhurtham</label>
+            <label class="filter-checkbox"><input type="radio" name="sidebar-occasion" value="festive" onchange="filterOccasion(this.value)" /> Festive Celebrations</label>
+            <label class="filter-checkbox"><input type="radio" name="sidebar-occasion" value="cocktail" onchange="filterOccasion(this.value)" /> Cocktail & Reception</label>
+            <label class="filter-checkbox"><input type="radio" name="sidebar-occasion" value="daily" onchange="filterOccasion(this.value)" /> Daily Luxury & Pujas</label>
+          </div>
+        </div>
+
+        <!-- Zari & Purity -->
+        <div class="filter-group">
+          <h4>Purity Standards</h4>
+          <div class="filter-options">
+            <label class="filter-checkbox"><input type="checkbox" checked disabled /> 100% Pure Silk Mark</label>
+            <label class="filter-checkbox"><input type="checkbox" checked disabled /> Authentic Silver/Gold Zari</label>
+            <label class="filter-checkbox"><input type="checkbox" checked disabled /> Artisan Pit Loom Weave</label>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main Products Content -->
+      <main>
+        <div class="catalog-top-controls">
+          <div style="font-size: 0.9rem; color: var(--color-text-muted);" id="item-count-indicator">
+            Showing <strong style="color: var(--color-primary);" id="items-count-num">12</strong> Heirloom Masterpieces
+          </div>
+
+          <div class="sort-box">
+            <label for="sort-select">Sort By:</label>
+            <select id="sort-select">
+              <option value="featured">Heirloom Featured</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="rating">Connoisseur Rating</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="products-grid" id="products-container">
+          <!-- Injected via JavaScript -->
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- ================= LUXURY FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="brand-monogram">VISTARA</div>
+          <p>
+            Vistara is an ode to India's living handloom heritage. We celebrate pure mulberry silks, authentic silver-gold zari, and the generational mastery of our artisan families.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h5>Collections</h5>
+          <ul class="footer-links">
+            <li><a href="collections.html?category=kanjivaram">Kanjivaram Silk Sarees</a></li>
+            <li><a href="collections.html?category=banarasi">Varanasi Brocades & Kadwa</a></li>
+            <li><a href="collections.html?category=organza">Hand-Painted Organza</a></li>
+            <li><a href="collections.html?category=chanderi">Tissue Chanderi</a></li>
+            <li><a href="collections.html?category=paithani">Yeola Paithani Weaves</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Concierge & Care</h5>
+          <ul class="footer-links">
+            <li><a href="#" class="trigger-booking-modal">Book Video Shopping</a></li>
+            <li><a href="about.html">Silk Mark Verification</a></li>
+            <li><a href="contact.html">Silk Care & Storage Guide</a></li>
+            <li><a href="contact.html#faqs">Worldwide Express Shipping</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Flagship Salons</h5>
+          <div class="boutique-snippet">
+            <strong>Mumbai Flagship</strong>
+            <p>Kala Ghoda, Fort, Mumbai 400001</p>
+          </div>
+          <div class="boutique-snippet">
+            <strong>Delhi Salon</strong>
+            <p>Mehrauli Heritage Complex, New Delhi 110030</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 VISTARA SILK & SAREES PRIVATE LIMITED. ALL RIGHTS RESERVED.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Drawer Backdrop & Drawers -->
+  <div class="drawer-backdrop" id="drawer-backdrop"></div>
+  <aside class="drawer" id="cart-drawer">
+    <div class="drawer-header">
+      <h3>Your Shopping Bag</h3>
+      <button class="drawer-close-btn" id="cart-close">&times;</button>
+    </div>
+    <div class="cart-free-shipping">
+      <div id="shipping-progress-text">Add sarees for Complimentary Global Express Shipping</div>
+      <div class="progress-bar"><div class="progress-fill" id="shipping-progress-fill"></div></div>
+    </div>
+    <div class="drawer-body" id="cart-items-container"></div>
+    <div class="drawer-footer">
+      <div class="coupon-section">
+        <input type="text" class="coupon-input" id="coupon-input" placeholder="Promotional Code" />
+        <button class="coupon-btn" onclick="applyCoupon()">Apply</button>
+      </div>
+      <div class="order-summary-row"><span>Bag Subtotal:</span><span id="cart-subtotal">₹0</span></div>
+      <div class="order-summary-row" id="cart-discount-row" style="display: none; color: var(--color-emerald);">
+        <span>Royal Discount (10%):</span><span id="cart-discount-amount">-₹0</span>
+      </div>
+      <div class="order-summary-row total"><span>Estimated Total:</span><span id="cart-total">₹0</span></div>
+      <button class="btn-primary btn-checkout" onclick="proceedToCheckout()">Proceed to Secure Checkout</button>
+    </div>
+  </aside>
+
+  <aside class="drawer" id="wishlist-drawer">
+    <div class="drawer-header">
+      <h3>Your Bridal Wishlist</h3>
+      <button class="drawer-close-btn" id="wishlist-close">&times;</button>
+    </div>
+    <div class="drawer-body" id="wishlist-items-container"></div>
+  </aside>
+
+  <div class="modal-backdrop" id="quickview-modal">
+    <div class="modal-box">
+      <button class="modal-close-btn" id="modal-close">&times;</button>
+      <div class="modal-content-grid" id="modal-content"></div>
+    </div>
+  </div>
+
+  <div class="search-modal" id="search-modal">
+    <div class="search-container">
+      <div class="search-input-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" class="search-input" id="search-input" placeholder="Search sarees by weave, fabric..." />
+        <button id="search-close" style="font-size: 1.5rem; color: var(--color-text-muted); cursor: pointer;">&times;</button>
+      </div>
+      <div class="search-results-dropdown" id="search-results"></div>
+    </div>
+  </div>
+
+  <script src="products.js"></script>
+  <script src="app.js"></script>
+  <script>
+    // URL Parameter handler for direct category links
+    window.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const cat = urlParams.get('category');
+      if (cat) {
+        const radio = document.querySelector(`input[name="sidebar-category"][value="${cat}"]`);
+        if (radio) {
+          radio.checked = true;
+          filterCategory(cat);
+        }
+      }
+    });
+
+    function filterCategory(category) {
+      VISTARA_STATE.activeFilter = category;
+      renderCatalogProducts();
+      updateCountIndicator();
+    }
+
+    function filterOccasion(occasion) {
+      VISTARA_STATE.activeFilter = occasion;
+      renderCatalogProducts();
+      updateCountIndicator();
+    }
+
+    function resetSidebarFilters() {
+      document.querySelector('input[name="sidebar-category"][value="all"]').checked = true;
+      document.querySelector('input[name="sidebar-occasion"][value="all"]').checked = true;
+      VISTARA_STATE.activeFilter = 'all';
+      renderCatalogProducts();
+      updateCountIndicator();
+    }
+
+    function updateCountIndicator() {
+      const container = document.getElementById('products-container');
+      const countNum = document.getElementById('items-count-num');
+      if (container && countNum) {
+        const cards = container.querySelectorAll('.product-card');
+        countNum.textContent = cards.length;
+      }
+    }
+  </script>
+</body>
+</html>
